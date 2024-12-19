@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "target": "ES2020", // Updated for modern syntax and better performance
+    "lib": ["dom", "dom.iterable", "esnext"], // Includes the latest JavaScript and DOM types
+    "allowJs": true, // Allows JavaScript files
+    "skipLibCheck": true, // Skips type checking of declaration files for faster builds
+    "strict": true, // Enables all strict type-checking options
+    "noEmit": true, // Prevents emitting compiled files
+    "esModuleInterop": true, // Ensures compatibility with CommonJS and ES modules
+    "module": "esnext", // Use ESNext for module resolution
+    "moduleResolution": "bundler", // Optimized for bundler environments like Webpack/Turbopack
+    "resolveJsonModule": true, // Allows importing JSON files
+    "isolatedModules": true, // Ensures each file is treated as an isolated module
+    "jsx": "preserve", // Keeps JSX syntax as-is for frameworks like React
+    "incremental": true, // Enables incremental compilation for faster builds
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./src/*"], // Simplifies imports with baseUrl for "src" folder
+      "@/components/*": ["./src/components/*"], // Add shortcut for components folder
+      "@/app/*": ["./src/app/*"] // Add shortcut for app folder
+    },
+    "baseUrl": "." // Sets the root directory for resolving module paths
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts" // Includes Next.js type declarations
+  ],
+  "exclude": ["node_modules", ".next"] // Excludes unnecessary files/folders
+}
